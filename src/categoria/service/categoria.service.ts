@@ -39,7 +39,7 @@ async findById (id: number): Promise<Categoria> {
 async findByTipo (tipo: string): Promise<Categoria[]> {
     return await this.CategoriaRepository.find ({
         where: {
-            tipo: ILike (`%${tipo}`)
+            tipo: ILike (`%${tipo}%`)
         },
 
         relations: {

@@ -20,6 +20,8 @@ export class Produto{
     @Column ({length: 50, nullable: false})
     faixa_etaria: string
 
-    @ManyToOne (() => Categoria, (Categoria) => Categoria.produto)
+    @ManyToOne (() => Categoria, (Categoria) => Categoria.produto, {
+        onDelete: "CASCADE"
+    })
     categoria: Categoria []
 }

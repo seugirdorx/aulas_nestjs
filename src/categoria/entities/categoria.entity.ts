@@ -16,8 +16,6 @@ export class Categoria {
     @Column ({ length: 20, nullable: false})
     ano_lancamento: string
 
-    @OneToMany (() => Produto, (Produto) => Produto.categoria, {
-        onDelete: "CASCADE"
-    })
+    @OneToMany (() => Produto, (Produto) => Produto.categoria)
     produto: Produto []
 }
